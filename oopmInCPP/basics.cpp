@@ -3,12 +3,13 @@
 using namespace std;
 
 class Employee {
-public:
+private:
   int Age;
   string Name;
   string Address;
   int WorkEx;
 
+public:
   Employee(string name, int age, string address, int workEx) {
     Age = age;
     Name = name;
