@@ -103,5 +103,8 @@ int main() {
   e2->work(); // Calls Teacher::work()
   e1->work(); // Calls Developer::work()
 
+  delete e1;
+  delete e2;
+
   return 0;
 }

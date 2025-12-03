@@ -4,17 +4,28 @@ using namespace std;
 /*
 Abstraction Example:
 
-- Smartphone is an abstract class (cannot be instantiated).
-- It defines "what" operations a smartphone must support (clickSelfie, call)
-  without providing the internal implementation.
-- Android and IPhone provide their own implementations for these functions.
-- Main function interacts only with the abstract interface, not caring
-  about how each phone performs the actions.
+- Smartphone is an abstract base class with pure virtual functions.
+  It only specifies *what* operations a smartphone must perform
+  (clickSelfie, call) — not *how* they are implemented.
+
+- Android and IPhone provide their own implementations of these
+  abstract operations.
+
+- In main(), we use a base-class pointer (Smartphone*) to interact with
+  different smartphone types without knowing the internal details.
+  This demonstrates abstraction + polymorphism.
+
+- A virtual destructor is added to ensure proper cleanup when deleting
+  derived objects through a base-class pointer.
 */
 
 class Smartphone {
 public:
-  // Pure virtual functions → forces derived classes to implement them
+  // Virtual destructor → ensures correct destructor runs when deleting via base
+  // pointer
+  virtual ~Smartphone() {}
+
+  // Pure virtual functions → must be implemented by derived classes
   virtual void clickSelfie() = 0;
   virtual void call() = 0;
 };
@@ -34,16 +45,20 @@ public:
 };
 
 int main() {
-  // Using abstraction: interacting via base class pointer
+  // Allocated dynamically → requires delete later
   Smartphone *phone1 = new Android();
 
-  // Object of derived class directly
+  // Stack object → no delete needed
   IPhone phone2;
 
+  // Using the abstract interface
   phone1->clickSelfie();
   phone1->call();
 
   phone2.call();
+
+  // Proper cleanup of dynamically allocated object
+  delete phone1;
 
   return 0;
 }
