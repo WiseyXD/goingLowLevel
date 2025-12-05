@@ -1,8 +1,10 @@
 #include "http_tcpServer.hpp"
 #include <arpa/inet.h>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <sys/socket.h>
+#include <unistd.h>
 
 namespace logs {
 void log(const std::string message) { std::cout << message << std::endl; };
@@ -17,7 +19,7 @@ namespace http {
 TcpServer::TcpServer(std::string ip_address, int port)
     : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
       m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)) {
-  m_socketAddress.sin_port = port;
+  m_socketAddress.sin_port = htons(port);
   m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
   m_socketAddress.sin_family = AF_INET;
   startServer();
@@ -46,5 +48,50 @@ void TcpServer::closeServer() {
   logs::log("Cleanup done, all the sockets are closed.");
   exit(0);
 }
+
+void TcpServer::startListen() {
+  if (listen(m_socket, 20) < 0) {
+    logs::exitWithError("Error occured while listening");
+  }
+
+  std::ostringstream ss;
+  ss << "\n*** Listening on ADDRESS: " << inet_ntoa(m_socketAddress.sin_addr)
+     << " PORT: " << ntohs(m_socketAddress.sin_port) << " ***\n\n";
+  logs::log(ss.str());
+};
+
+void TcpServer::acceptConnection() {
+  m_new_socket =
+      accept(m_socket, (sockaddr *)&m_socketAddress, &m_socketAddress_len);
+
+  if (m_new_socket < 0) {
+    std::ostringstream ss;
+    ss << "Server failed to accept incoming connection from ADDRESS: "
+       << inet_ntoa(m_socketAddress.sin_addr)
+       << "; PORT: " << ntohs(m_socketAddress.sin_port);
+    logs::exitWithError(ss.str());
+  }
+}
+
+void TcpServer::readingRequest() {
+  const int BUFFER_SIZE = 30720;
+
+  char buffer[BUFFER_SIZE] = {0};
+  bytesRead = read(m_new_socket, &buffer, BUFFER_SIZE);
+  if (bytesRead < 0) {
+    logs::exitWithError("Error while reading the request stream.");
+  }
+};
+
+void TcpServer::sendingResponse() {
+  long bytesSent;
+  bytesSent =
+      write(m_new_socket, m_serverMessage.c_str(), m_serverMessage.size());
+  if (bytesSent == m_serverMessage.size()) {
+    logs::log("------ Server Response sent to client ------\n\n");
+  } else {
+    logs::log("Error sending response to client");
+  }
+};
 
 } // namespace http

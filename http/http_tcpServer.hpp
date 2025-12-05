@@ -4,6 +4,7 @@
 #include <netinet/in.h> // defines sockaddr_in and in_addr
 #include <string>
 #include <sys/socket.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 namespace http {
@@ -29,8 +30,15 @@ private:
   int m_port;
   int m_new_socket;
   struct sockaddr_in m_socketAddress;
-  int m_socketAddress_len;
+  socklen_t m_socketAddress_len;
+  long m_incomingMessage;
+  std::string m_serverMessage;
+  ssize_t bytesRead;
   void closeServer();
   int startServer();
+  void startListen();
+  void acceptConnection();
+  void readingRequest();
+  void sendingResponse();
 };
 }; // namespace http
