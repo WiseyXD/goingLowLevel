@@ -1,10 +1,6 @@
 #include "http_tcpServer.hpp"
-#include <arpa/inet.h>
 #include <iostream>
 #include <sstream>
-#include <string>
-#include <sys/socket.h>
-#include <unistd.h>
 
 namespace logs {
 void log(const std::string message) { std::cout << message << std::endl; };
@@ -18,10 +14,17 @@ namespace http {
 
 TcpServer::TcpServer(std::string ip_address, int port)
     : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
-      m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)) {
+      m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)),
+      m_clientAddress(), m_clientAddress_len(sizeof(m_clientAddress)) {
   m_socketAddress.sin_port = htons(port);
   m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
   m_socketAddress.sin_family = AF_INET;
+  m_serverMessage = "HTTP/1.1 200 OK\r\n"
+                    "Content-Type: text/plain\r\n"
+                    "Content-Length: 13\r\n"
+                    "\r\n"
+                    "Hello, world!";
+
   startServer();
 }
 
@@ -46,7 +49,6 @@ void TcpServer::closeServer() {
   close(m_socket);
   close(m_new_socket);
   logs::log("Cleanup done, all the sockets are closed.");
-  exit(0);
 }
 
 void TcpServer::startListen() {
@@ -62,13 +64,13 @@ void TcpServer::startListen() {
 
 void TcpServer::acceptConnection() {
   m_new_socket =
-      accept(m_socket, (sockaddr *)&m_socketAddress, &m_socketAddress_len);
+      accept(m_socket, (sockaddr *)&m_clientAddress, &m_clientAddress_len);
 
   if (m_new_socket < 0) {
     std::ostringstream ss;
     ss << "Server failed to accept incoming connection from ADDRESS: "
-       << inet_ntoa(m_socketAddress.sin_addr)
-       << "; PORT: " << ntohs(m_socketAddress.sin_port);
+       << inet_ntoa(m_clientAddress.sin_addr)
+       << "; PORT: " << ntohs(m_clientAddress.sin_port);
     logs::exitWithError(ss.str());
   }
 }

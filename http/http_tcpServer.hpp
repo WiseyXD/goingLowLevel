@@ -24,7 +24,7 @@ public:
   TcpServer(std::string ip_address, int port);
   ~TcpServer();
 
-private:
+  // private:
   int m_socket;
   std::string m_ip_address;
   int m_port;
@@ -34,6 +34,8 @@ private:
   long m_incomingMessage;
   std::string m_serverMessage;
   ssize_t bytesRead;
+  struct sockaddr_in m_clientAddress;
+  socklen_t m_clientAddress_len;
   void closeServer();
   int startServer();
   void startListen();
