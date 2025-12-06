@@ -92,7 +92,7 @@ void TcpServer::sendingResponse() {
   if (bytesSent == m_serverMessage.size()) {
     logs::log("------ Server Response sent to client ------\n\n");
   } else {
-    logs::log("Error sending response to client");
+    logs::log("Error sending response to the client");
   }
 };
 
