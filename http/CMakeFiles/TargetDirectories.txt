@@ -1,0 +1,3 @@
+/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir
+/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/edit_cache.dir
+/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/rebuild_cache.dir

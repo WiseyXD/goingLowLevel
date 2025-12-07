@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/HTTP.dir/link.d CMakeFiles/HTTP.dir/main_server_linux.cpp.o CMakeFiles/HTTP.dir/http_tcpServer.cpp.o -o HTTP
