@@ -4,6 +4,8 @@
 CMakeFiles/HTTP.dir/http_tcpServer.cpp.o
  /home/wiseyxd/Projects/goingLowLevel/http/http_tcpServer.cpp
  /home/wiseyxd/Projects/goingLowLevel/http/http_tcpServer.hpp
+ /home/wiseyxd/Projects/goingLowLevel/http/utilities.cpp
+ /home/wiseyxd/Projects/goingLowLevel/http/utilities.hpp
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
  /usr/include/asm-generic/bitsperlong.h

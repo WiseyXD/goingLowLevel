@@ -1,4 +1,5 @@
 #include "http_tcpServer.hpp"
+#include "utilities.cpp"
 #include "utilities.hpp"
 #include <iostream>
 #include <sstream>
@@ -72,26 +73,19 @@ void TcpServer::acceptConnection() {
 
 void TcpServer::readingRequest() {
   const int BUFFER_SIZE = 30720;
-  std::vector<std::string> v1;
-
   char buffer[BUFFER_SIZE] = {0};
-  bytesRead = read(m_new_socket, &buffer, BUFFER_SIZE);
-  std::cout << bytesRead << std::endl;
-  std::cout << buffer << std::endl;
-  std::string rawRequest(buffer);
 
-  v1 = utils::split(rawRequest, ' ');
-  for (auto it : v1) {
-    std::cout << it << std::endl;
-  };
-
-  m_requestMessage.method = *(v1.begin());
-
-  std::cout << m_requestMessage.method << std::endl;
+  bytesRead = read(m_new_socket, buffer, BUFFER_SIZE);
   if (bytesRead < 0) {
     logs::exitWithError("Error while reading the request stream.");
   }
-};
+
+  std::string rawRequest(buffer);
+  parsedRequest parsedRequest = utils::parseRequest(rawRequest);
+  for (auto header : parsedRequest.headers) {
+    std::cout << header.first << " : " << header.second << std::endl;
+  }
+}
 
 void TcpServer::sendingResponse() {
   long bytesSent;

@@ -3,6 +3,8 @@
 
 CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: http_tcpServer.cpp \
   http_tcpServer.hpp \
+  utilities.cpp \
+  utilities.hpp \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -565,9 +567,13 @@ CMakeFiles/HTTP.dir/main_server_linux.cpp.o:
 
 /usr/include/c++/15.2.1/bits/postypes.h:
 
-/usr/include/bits/types/__FILE.h:
+/usr/include/c++/15.2.1/bits/ptr_traits.h:
 
-/usr/include/bits/types/FILE.h:
+/usr/include/c++/15.2.1/bits/ostream_insert.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/c++/15.2.1/bits/ostream.tcc:
 
 /usr/include/bits/types.h:
 
@@ -577,11 +583,9 @@ CMakeFiles/HTTP.dir/main_server_linux.cpp.o:
 
 /usr/include/bits/types/time_t.h:
 
+/usr/include/bits/types/__FILE.h:
+
 /usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/15.2.1/system_error:
-
-/usr/include/c++/15.2.1/bits/new_allocator.h:
 
 /usr/include/c++/15.2.1/cstdlib:
 
@@ -635,6 +639,28 @@ main_server_linux.cpp:
 
 /usr/include/c++/15.2.1/bits/exception_defines.h:
 
+/usr/include/bits/floatn.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/c++/15.2.1/pstl/pstl_config.h:
+
+/usr/include/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/asm/sockios.h:
+
+/usr/include/c++/15.2.1/bits/stringfwd.h:
+
+/usr/include/c++/15.2.1/bits/nested_exception.h:
+
+/usr/include/asm/posix_types.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/c++/15.2.1/bits/allocator.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
 /usr/include/c++/15.2.1/type_traits:
 
 /usr/include/c++/15.2.1/debug/debug.h:
@@ -651,37 +677,23 @@ main_server_linux.cpp:
 
 /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
 
-/usr/include/bits/floatn.h:
-
-/usr/include/c++/15.2.1/pstl/pstl_config.h:
-
-/usr/include/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/asm/sockios.h:
-
-/usr/include/c++/15.2.1/bits/stringfwd.h:
-
-/usr/include/c++/15.2.1/bits/nested_exception.h:
+/usr/include/asm-generic/errno.h:
 
 /usr/include/asm-generic/socket.h:
 
-/usr/include/asm/posix_types.h:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/include/c++/15.2.1/bits/allocator.h:
-
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/asm-generic/errno-base.h:
+utilities.hpp:
 
 /usr/include/asm/types.h:
 
 /usr/include/bits/types/struct_FILE.h:
+
+/usr/include/features.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/usr/include/bits/endianness.h:
+
+/usr/include/c++/15.2.1/bits/basic_string.tcc:
 
 /usr/lib/libc_nonshared.a:
 
@@ -721,6 +733,20 @@ http_tcpServer.cpp:
 
 /usr/include/bits/typesizes.h:
 
+/usr/include/c++/15.2.1/bit:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/c++/15.2.1/system_error:
+
+/usr/include/c++/15.2.1/bits/new_allocator.h:
+
+utilities.cpp:
+
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
 /usr/include/bits/stdlib-float.h:
@@ -732,18 +758,6 @@ http_tcpServer.cpp:
 /usr/lib/libgcc_s.so.1:
 
 /usr/include/bits/confname.h:
-
-/usr/include/features.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
-
-/usr/include/bits/endianness.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/c++/15.2.1/bit:
-
-/usr/include/c++/15.2.1/bits/basic_string.tcc:
 
 /usr/include/c++/15.2.1/bits/stl_iterator.h:
 
@@ -765,7 +779,7 @@ http_tcpServer.cpp:
 
 /usr/include/bits/errno.h:
 
-/usr/include/bits/floatn-common.h:
+/usr/include/bits/types/FILE.h:
 
 /usr/include/bits/types/__fpos64_t.h:
 
@@ -916,11 +930,3 @@ http_tcpServer.hpp:
 /usr/include/alloca.h:
 
 /usr/include/c++/15.2.1/bits/ostream.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
-
-/usr/include/c++/15.2.1/bits/ostream.tcc:
-
-/usr/include/c++/15.2.1/bits/ptr_traits.h:
-
-/usr/include/c++/15.2.1/bits/ostream_insert.h:
