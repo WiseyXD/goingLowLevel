@@ -1,47 +1,9 @@
 #include "http_tcpServer.hpp"
+#include "utilities.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
-
-std::vector<std::string> split(const std::string &text, char delimiter) {
-  std::vector<std::string> parts;
-  std::string current;
-
-  for (char c : text) {
-    if (c == delimiter) {
-      parts.push_back(current);
-      current.clear();
-    } else {
-      current.push_back(c);
-    }
-  }
-
-  parts.push_back(current);
-  return parts;
-}
-
-std::vector<std::string> split(const std::string &text,
-                               const std::string &delimiter) {
-  std::vector<std::string> parts;
-  size_t start = 0, end;
-
-  while ((end = text.find(delimiter, start)) != std::string::npos) {
-    parts.push_back(text.substr(start, end - start));
-    start = end + delimiter.length();
-  }
-
-  parts.push_back(text.substr(start));
-  return parts;
-}
-
-namespace logs {
-void log(const std::string message) { std::cout << message << std::endl; };
-void exitWithError(const std::string errorMessage) {
-  std::cout << errorMessage << std::endl;
-  exit(1);
-};
-} // namespace logs
 
 namespace http {
 
@@ -118,10 +80,14 @@ void TcpServer::readingRequest() {
   std::cout << buffer << std::endl;
   std::string rawRequest(buffer);
 
-  v1 = split(rawRequest, ' ');
-  std::cout << rawRequest << std::endl;
-  std::cout << v1[0] << std::endl;
+  v1 = utils::split(rawRequest, ' ');
+  for (auto it : v1) {
+    std::cout << it << std::endl;
+  };
 
+  m_requestMessage.method = *(v1.begin());
+
+  std::cout << m_requestMessage.method << std::endl;
   if (bytesRead < 0) {
     logs::exitWithError("Error while reading the request stream.");
   }

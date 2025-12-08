@@ -19,28 +19,33 @@ namespace http {
 //   unsigned long s_addr;
 // };
 
+struct requestBody {
+  std::string method;
+  std::string host;
+};
+
 class TcpServer {
 public:
   TcpServer(std::string ip_address, int port);
   ~TcpServer();
-
-  // private:
-  int m_socket;
-  std::string m_ip_address;
-  int m_port;
-  int m_new_socket;
-  struct sockaddr_in m_socketAddress;
-  socklen_t m_socketAddress_len;
-  long m_incomingMessage;
-  std::string m_serverMessage;
-  ssize_t bytesRead;
-  struct sockaddr_in m_clientAddress;
-  socklen_t m_clientAddress_len;
   void closeServer();
   int startServer();
   void startListen();
   void acceptConnection();
   void readingRequest();
   void sendingResponse();
+
+private:
+  int m_socket;
+  std::string m_ip_address;
+  int m_port;
+  int m_new_socket;
+  struct sockaddr_in m_socketAddress;
+  socklen_t m_socketAddress_len;
+  std::string m_serverMessage;
+  struct requestBody m_requestMessage;
+  ssize_t bytesRead;
+  struct sockaddr_in m_clientAddress;
+  socklen_t m_clientAddress_len;
 };
 }; // namespace http
