@@ -85,6 +85,13 @@ void TcpServer::readingRequest() {
   for (auto header : parsedRequest.headers) {
     std::cout << header.first << " : " << header.second << std::endl;
   }
+  if (std::holds_alternative<std::string>(parsedRequest.body)) {
+    std::cout << "It's a string: " << std::get<std::string>(parsedRequest.body)
+              << std::endl;
+  } else if (std::holds_alternative<json>(parsedRequest.body)) {
+    std::cout << "It's JSON: " << std::get<json>(parsedRequest.body).dump(2)
+              << std::endl;
+  }
 }
 
 void TcpServer::sendingResponse() {

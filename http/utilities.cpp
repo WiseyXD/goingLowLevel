@@ -37,7 +37,10 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
   // -------------------------
   // 1. Split request by "\r\n\r\n" -> separates headers from body
   // -------------------------
+  bool isJson = false;
+  json jsonRequstBody;
   parsedRequest result;
+
   std::vector<std::string> requestParts = utils::split(rawRequest, "\r\n\r\n");
 
   std::string headerSection = requestParts.size() > 0 ? requestParts[0] : "";
@@ -75,14 +78,35 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
 
     std::vector<std::string> kv = utils::split(line, ": ");
     if (kv.size() == 2) {
+      std::transform(kv[0].begin(), kv[0].end(), kv[0].begin(), ::tolower);
       headers.push_back({kv[0], kv[1]});
     }
   }
 
   // -------------------------
-  // 5. Body (already extracted)
+  // 5. Body (parse JSON if content-type is json)
   // -------------------------
   std::string requestBody = bodySection;
+
+  std::cout << "REQUEST BODY RAW: " << requestBody << std::endl;
+
+  for (auto h : headers) {
+    std::cout << h.first << std::endl;
+    std::cout << h.second << std::endl;
+
+    if (h.first == "content-type" &&
+        h.second.find("application/json") != std::string::npos) {
+      isJson = true;
+      try {
+        jsonRequstBody = json::parse(requestBody);
+        std::cout << "JSON BODY PARSED: " << jsonRequstBody.dump(2)
+                  << std::endl;
+
+      } catch (const std::exception &e) {
+        std::cerr << "JSON parse error: " << e.what() << std::endl;
+      }
+    }
+  }
 
   // Debug print (optional)
   // std::cout << "Method: " << method << std::endl;
@@ -95,6 +119,11 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
   result.version = httpVersion;
   result.body = requestBody;
   result.headers = headers;
+  if (isJson) {
+    std::cout << "Json true!" << std::endl;
+    result.body = jsonRequstBody;
+  }
+
   return result;
 };
 }; // namespace utils
