@@ -83,6 +83,7 @@ void TcpServer::readingRequest() {
   std::string rawRequest(buffer);
   parsedRequest parsedRequest = utils::parseRequest(rawRequest);
   for (auto header : parsedRequest.headers) {
+    // here we can do routing I guess with the route in the request endpoint
     std::cout << header.first << " : " << header.second << std::endl;
   }
   if (std::holds_alternative<std::string>(parsedRequest.body)) {
