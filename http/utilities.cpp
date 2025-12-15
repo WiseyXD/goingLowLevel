@@ -88,8 +88,6 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
   // -------------------------
   std::string requestBody = bodySection;
 
-  std::cout << "REQUEST BODY RAW: " << requestBody << std::endl;
-
   for (auto h : headers) {
     std::cout << h.first << std::endl;
     std::cout << h.second << std::endl;
@@ -126,12 +124,5 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
 
   return result;
 };
-}; // namespace utils
 
-namespace logs {
-void log(const std::string message) { std::cout << message << std::endl; };
-void exitWithError(const std::string errorMessage) {
-  std::cout << errorMessage << std::endl;
-  exit(1);
-};
-} // namespace logs
+}; // namespace utils

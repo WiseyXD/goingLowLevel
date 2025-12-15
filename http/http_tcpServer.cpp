@@ -1,6 +1,6 @@
 #include "http_tcpServer.hpp"
+#include "logs.cpp"
 #include "utilities.cpp"
-#include "utilities.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -81,18 +81,9 @@ void TcpServer::readingRequest() {
   }
 
   std::string rawRequest(buffer);
+  std::cout << rawRequest << std::endl;
   parsedRequest parsedRequest = utils::parseRequest(rawRequest);
-  for (auto header : parsedRequest.headers) {
-    // here we can do routing I guess with the route in the request endpoint
-    std::cout << header.first << " : " << header.second << std::endl;
-  }
-  if (std::holds_alternative<std::string>(parsedRequest.body)) {
-    std::cout << "It's a string: " << std::get<std::string>(parsedRequest.body)
-              << std::endl;
-  } else if (std::holds_alternative<json>(parsedRequest.body)) {
-    std::cout << "It's JSON: " << std::get<json>(parsedRequest.body).dump(2)
-              << std::endl;
-  }
+  std::cout << parsedRequest.path << std::endl;
 }
 
 void TcpServer::sendingResponse() {
