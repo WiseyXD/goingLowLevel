@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/HTTP.dir/main_server_linux.cpp.o.d"
   "CMakeFiles/HTTP.dir/utils/logs.cpp.o"
   "CMakeFiles/HTTP.dir/utils/logs.cpp.o.d"
+  "CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o"
+  "CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o.d"
   "CMakeFiles/HTTP.dir/utils/utility.cpp.o"
   "CMakeFiles/HTTP.dir/utils/utility.cpp.o.d"
   "HTTP"

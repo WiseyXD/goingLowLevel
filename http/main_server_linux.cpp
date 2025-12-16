@@ -1,16 +1,8 @@
+#include "./utils/route_handlers.hpp"
 #include "core/http_tcpServer.hpp"
-#include "core/request.hpp"
 #include "core/router.hpp"
 
 struct parsedRequest;
-
-std::string handleGet(const parsedRequest &req) {
-  return "GET request from " + req.path;
-};
-
-std::string handlePost(const parsedRequest &req) {
-  return "POST request from " + req.path;
-};
 
 int main() {
   using namespace http;

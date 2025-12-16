@@ -10,6 +10,21 @@ void Router::get(const std::string &path, Handler handler) {
   routes[makeKey("GET", path)] = handler;
 };
 
+void Router::patch(const std::string &path, Handler handler) {
+
+  routes[makeKey("PATCH", path)] = handler;
+};
+
+void Router::put(const std::string &path, Handler handler) {
+
+  routes[makeKey("PUT", path)] = handler;
+};
+
+void Router::d_elete(const std::string &path, Handler handler) {
+
+  routes[makeKey("DELETE", path)] = handler;
+};
+
 std::string Router::handle(const parsedRequest &req) {
   std::string key = makeKey(req.method, req.path);
 

@@ -1,8 +1,8 @@
-CMakeFiles/HTTP.dir/main_server_linux.cpp.o: \
- /home/wiseyxd/Projects/goingLowLevel/http/main_server_linux.cpp \
+CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o: \
+ /home/wiseyxd/Projects/goingLowLevel/http/utils/route_handlers.cpp \
  /usr/include/stdc-predef.h \
- /home/wiseyxd/Projects/goingLowLevel/http/./utils/route_handlers.hpp \
- /home/wiseyxd/Projects/goingLowLevel/http/./utils/../core/request.hpp \
+ /home/wiseyxd/Projects/goingLowLevel/http/utils/route_handlers.hpp \
+ /home/wiseyxd/Projects/goingLowLevel/http/utils/../core/request.hpp \
  /usr/include/c++/15.2.1/iostream \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -293,18 +293,4 @@ CMakeFiles/HTTP.dir/main_server_linux.cpp.o: \
  /usr/include/nlohmann/ordered_map.hpp /usr/include/c++/15.2.1/any \
  /usr/include/nlohmann/detail/macro_unscope.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /usr/include/c++/15.2.1/variant /usr/include/c++/15.2.1/bits/monostate.h \
- /home/wiseyxd/Projects/goingLowLevel/http/core/http_tcpServer.hpp \
- /home/wiseyxd/Projects/goingLowLevel/http/core/response.hpp \
- /usr/include/arpa/inet.h /usr/include/netinet/in.h \
- /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
- /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
- /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
- /home/wiseyxd/Projects/goingLowLevel/http/core/router.hpp
+ /usr/include/c++/15.2.1/variant /usr/include/c++/15.2.1/bits/monostate.h

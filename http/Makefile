@@ -273,6 +273,30 @@ utils/logs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/logs.cpp.s
 .PHONY : utils/logs.cpp.s
 
+utils/route_handlers.o: utils/route_handlers.cpp.o
+.PHONY : utils/route_handlers.o
+
+# target to build an object file
+utils/route_handlers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o
+.PHONY : utils/route_handlers.cpp.o
+
+utils/route_handlers.i: utils/route_handlers.cpp.i
+.PHONY : utils/route_handlers.i
+
+# target to preprocess a source file
+utils/route_handlers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/route_handlers.cpp.i
+.PHONY : utils/route_handlers.cpp.i
+
+utils/route_handlers.s: utils/route_handlers.cpp.s
+.PHONY : utils/route_handlers.s
+
+# target to generate assembly for a file
+utils/route_handlers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/route_handlers.cpp.s
+.PHONY : utils/route_handlers.cpp.s
+
 utils/utility.o: utils/utility.cpp.o
 .PHONY : utils/utility.o
 
@@ -324,6 +348,9 @@ help:
 	@echo "... utils/logs.o"
 	@echo "... utils/logs.i"
 	@echo "... utils/logs.s"
+	@echo "... utils/route_handlers.o"
+	@echo "... utils/route_handlers.i"
+	@echo "... utils/route_handlers.s"
 	@echo "... utils/utility.o"
 	@echo "... utils/utility.i"
 	@echo "... utils/utility.s"

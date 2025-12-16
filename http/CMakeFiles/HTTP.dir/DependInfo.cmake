@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wiseyxd/Projects/goingLowLevel/http/core/router.cpp" "CMakeFiles/HTTP.dir/core/router.cpp.o" "gcc" "CMakeFiles/HTTP.dir/core/router.cpp.o.d"
   "/home/wiseyxd/Projects/goingLowLevel/http/main_server_linux.cpp" "CMakeFiles/HTTP.dir/main_server_linux.cpp.o" "gcc" "CMakeFiles/HTTP.dir/main_server_linux.cpp.o.d"
   "/home/wiseyxd/Projects/goingLowLevel/http/utils/logs.cpp" "CMakeFiles/HTTP.dir/utils/logs.cpp.o" "gcc" "CMakeFiles/HTTP.dir/utils/logs.cpp.o.d"
+  "/home/wiseyxd/Projects/goingLowLevel/http/utils/route_handlers.cpp" "CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o" "gcc" "CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o.d"
   "/home/wiseyxd/Projects/goingLowLevel/http/utils/utility.cpp" "CMakeFiles/HTTP.dir/utils/utility.cpp.o" "gcc" "CMakeFiles/HTTP.dir/utils/utility.cpp.o.d"
   "" "HTTP" "gcc" "CMakeFiles/HTTP.dir/link.d"
   )

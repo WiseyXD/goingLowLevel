@@ -9,6 +9,7 @@ HTTP: \
   CMakeFiles/HTTP.dir/core/response.cpp.o \
   CMakeFiles/HTTP.dir/utils/logs.cpp.o \
   CMakeFiles/HTTP.dir/utils/utility.cpp.o \
+  CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -56,6 +57,8 @@ CMakeFiles/HTTP.dir/core/response.cpp.o:
 CMakeFiles/HTTP.dir/utils/logs.cpp.o:
 
 CMakeFiles/HTTP.dir/utils/utility.cpp.o:
+
+CMakeFiles/HTTP.dir/utils/route_handlers.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 
