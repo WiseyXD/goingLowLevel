@@ -1,5 +1,6 @@
 #pragma once
 
+#include "response.hpp"
 #include <arpa/inet.h>  // inet_pton, htons, etc.
 #include <netinet/in.h> // defines sockaddr_in and in_addr
 #include <string>
@@ -42,7 +43,8 @@ private:
   int m_new_socket;
   struct sockaddr_in m_socketAddress;
   socklen_t m_socketAddress_len;
-  std::string m_serverMessage;
+  HttpResponse m_raw_response;
+  std ::string m_serverMessage;
   struct requestBody m_requestMessage;
   ssize_t bytesRead;
   struct sockaddr_in m_clientAddress;

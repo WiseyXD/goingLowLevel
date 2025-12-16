@@ -9,9 +9,7 @@ std::string handleGet(const parsedRequest &req) {
 };
 
 std::string handlePost(const parsedRequest &req) {
-  return
-
-      "POST request from " + req.path;
+  return "POST request from " + req.path;
 };
 
 int main() {

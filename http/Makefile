@@ -177,6 +177,30 @@ core/request.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/request.cpp.s
 .PHONY : core/request.cpp.s
 
+core/response.o: core/response.cpp.o
+.PHONY : core/response.o
+
+# target to build an object file
+core/response.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/response.cpp.o
+.PHONY : core/response.cpp.o
+
+core/response.i: core/response.cpp.i
+.PHONY : core/response.i
+
+# target to preprocess a source file
+core/response.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/response.cpp.i
+.PHONY : core/response.cpp.i
+
+core/response.s: core/response.cpp.s
+.PHONY : core/response.s
+
+# target to generate assembly for a file
+core/response.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/response.cpp.s
+.PHONY : core/response.cpp.s
+
 core/router.o: core/router.cpp.o
 .PHONY : core/router.o
 
@@ -288,6 +312,9 @@ help:
 	@echo "... core/request.o"
 	@echo "... core/request.i"
 	@echo "... core/request.s"
+	@echo "... core/response.o"
+	@echo "... core/response.i"
+	@echo "... core/response.s"
 	@echo "... core/router.o"
 	@echo "... core/router.i"
 	@echo "... core/router.s"

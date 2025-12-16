@@ -14,15 +14,15 @@ TcpServer::TcpServer(std::string ip_address, int port, Router &router)
     : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
       m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)),
       m_clientAddress(), m_clientAddress_len(sizeof(m_clientAddress)),
-      m_router(router), m_serverMessage() {
+      m_router(router), m_raw_response(), m_serverMessage() {
   m_socketAddress.sin_port = htons(port);
   m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
   m_socketAddress.sin_family = AF_INET;
-  m_serverMessage = "HTTP/1.1 200 OK\r\n"
-                    "Content-Type: text/plain\r\n"
-                    "Content-Length: 13\r\n"
-                    "\r\n"
-                    "Hello, world!";
+  m_raw_response.body = "HTTP/1.1 200 OK\r\n"
+                        "Content-Type: text/plain\r\n"
+                        "Content-Length: 13\r\n"
+                        "\r\n"
+                        "Hello, world!";
 
   startServer();
 }
@@ -87,12 +87,12 @@ void TcpServer::readingRequest() {
   // std::cout << rawRequest << std::endl;
   parsedRequest parsedRequest = parseRequest(rawRequest);
   // std::cout << parsedRequest.path << std::endl;
-  m_serverMessage = m_router.handle(parsedRequest);
+  m_raw_response.body = m_router.handle(parsedRequest);
 }
 
 void TcpServer::sendingResponse() {
   long bytesSent;
-  std::cout << m_serverMessage.c_str() << std::endl;
+  m_serverMessage = buildResponse(m_raw_response);
   bytesSent =
       write(m_new_socket, m_serverMessage.c_str(), m_serverMessage.size());
   if (bytesSent == m_serverMessage.size()) {

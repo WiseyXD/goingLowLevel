@@ -5,6 +5,7 @@ CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o: core/http_tcpServer.cpp \
   utils/logs.hpp \
   core/http_tcpServer.hpp \
   core/request.hpp \
+  core/response.hpp \
   core/router.hpp \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -1152,6 +1153,7 @@ CMakeFiles/HTTP.dir/core/router.cpp.o: core/router.cpp \
 CMakeFiles/HTTP.dir/main_server_linux.cpp.o: main_server_linux.cpp \
   core/http_tcpServer.hpp \
   core/request.hpp \
+  core/response.hpp \
   core/router.hpp \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -1913,18 +1915,19 @@ HTTP: /usr/lib/Scrt1.o \
   /usr/lib/libc_nonshared.a \
   /usr/lib/libm.so.6 \
   /usr/lib/libmvec.so.1 \
-  CMakeFiles/HTTP.dir/http_tcpServer.cpp.o \
-  CMakeFiles/HTTP.dir/logs.cpp.o \
+  CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o \
+  CMakeFiles/HTTP.dir/core/request.cpp.o \
+  CMakeFiles/HTTP.dir/core/router.cpp.o \
   CMakeFiles/HTTP.dir/main_server_linux.cpp.o \
-  CMakeFiles/HTTP.dir/router.cpp.o \
-  CMakeFiles/HTTP.dir/utilities.cpp.o
+  CMakeFiles/HTTP.dir/utils/logs.cpp.o \
+  CMakeFiles/HTTP.dir/utils/utility.cpp.o
 
-
-CMakeFiles/HTTP.dir/router.cpp.o:
 
 CMakeFiles/HTTP.dir/main_server_linux.cpp.o:
 
-CMakeFiles/HTTP.dir/http_tcpServer.cpp.o:
+CMakeFiles/HTTP.dir/core/request.cpp.o:
+
+CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o:
 
 /usr/lib/libmvec.so.1:
 
@@ -1951,8 +1954,6 @@ CMakeFiles/HTTP.dir/http_tcpServer.cpp.o:
 /usr/lib/Scrt1.o:
 
 utils/utility.cpp:
-
-CMakeFiles/HTTP.dir/utilities.cpp.o:
 
 utils/logs.cpp:
 
@@ -2054,6 +2055,8 @@ utils/utility.hpp:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
+CMakeFiles/HTTP.dir/core/router.cpp.o:
+
 /usr/include/nlohmann/detail/output/binary_writer.hpp:
 
 /usr/include/c++/15.2.1/version:
@@ -2146,6 +2149,8 @@ utils/utility.hpp:
 
 /usr/include/bits/types/wint_t.h:
 
+core/response.hpp:
+
 /usr/include/c++/15.2.1/bits/memoryfwd.h:
 
 /usr/include/nlohmann/detail/meta/is_sax.hpp:
@@ -2222,11 +2227,13 @@ utils/utility.hpp:
 
 /usr/include/bits/stdlib-float.h:
 
+/usr/include/c++/15.2.1/iosfwd:
+
+/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
 /usr/include/bits/stdint-least.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/c++/15.2.1/bits/locale_facets_nonio.h:
 
 /usr/include/bits/sockaddr.h:
 
@@ -2248,31 +2255,41 @@ utils/utility.hpp:
 
 /usr/include/c++/15.2.1/any:
 
-/usr/include/c++/15.2.1/bits/atomic_base.h:
+/usr/include/bits/stdint-intn.h:
 
-/usr/include/libintl.h:
+/usr/include/bits/types/clockid_t.h:
 
-/usr/include/bits/endianness.h:
+/usr/include/bits/atomic_wide_counter.h:
 
-/usr/include/c++/15.2.1/bits/valarray_array.tcc:
+/usr/include/bits/posix_opt.h:
 
-/usr/include/bits/pthread_stack_min-dynamic.h:
+/usr/include/c++/15.2.1/map:
 
-/usr/include/c++/15.2.1/bits/forward_list.h:
-
-/usr/include/asm/types.h:
-
-utils/logs.hpp:
-
-core/router.hpp:
-
-/usr/include/c++/15.2.1/bits/fs_ops.h:
-
-/usr/include/bits/mathcalls-macros.h:
+/usr/include/bits/locale.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 
 /usr/include/asm-generic/int-ll64.h:
+
+/usr/include/bits/mathcalls-macros.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets_nonio.h:
+
+/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
+
+/usr/include/c++/15.2.1/limits:
+
+/usr/include/bits/struct_mutex.h:
+
+/usr/include/c++/15.2.1/bits/istream.tcc:
+
+/usr/include/c++/15.2.1/bits/stl_construct.h:
+
+core/http_tcpServer.cpp:
 
 /usr/include/bits/long-double.h:
 
@@ -2290,9 +2307,23 @@ core/router.hpp:
 
 /usr/include/c++/15.2.1/ios:
 
+/usr/include/asm/types.h:
+
+utils/logs.hpp:
+
+core/router.hpp:
+
+/usr/include/c++/15.2.1/bits/fs_ops.h:
+
 /usr/include/nlohmann/detail/iterators/iter_impl.hpp:
 
 /usr/include/c++/15.2.1/bits/ostream.h:
+
+/usr/include/c++/15.2.1/bits/atomic_base.h:
+
+/usr/include/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/c++/15.2.1/bits/forward_list.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
@@ -2316,6 +2347,16 @@ core/router.hpp:
 
 /usr/include/c++/15.2.1/bits/quoted_string.h:
 
+/usr/include/c++/15.2.1/bits/allocator.h:
+
+/usr/include/c++/15.2.1/cwctype:
+
+/usr/include/c++/15.2.1/compare:
+
+/usr/include/bits/time.h:
+
+/usr/include/asm/posix_types.h:
+
 /usr/lib/libc.so:
 
 /usr/include/c++/15.2.1/tr1/beta_function.tcc:
@@ -2334,41 +2375,13 @@ core/router.hpp:
 
 /usr/include/c++/15.2.1/bits/vector.tcc:
 
-/usr/include/bits/stdint-intn.h:
+CMakeFiles/HTTP.dir/utils/utility.cpp.o:
 
-/usr/include/bits/types/clockid_t.h:
+/usr/include/libintl.h:
 
-/usr/include/bits/atomic_wide_counter.h:
+/usr/include/c++/15.2.1/bits/valarray_array.tcc:
 
-/usr/include/bits/posix_opt.h:
-
-/usr/include/c++/15.2.1/map:
-
-/usr/include/bits/locale.h:
-
-/usr/include/c++/15.2.1/bits/allocator.h:
-
-/usr/include/c++/15.2.1/cwctype:
-
-/usr/include/c++/15.2.1/compare:
-
-/usr/include/bits/time.h:
-
-/usr/include/asm/posix_types.h:
-
-/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
-
-/usr/include/c++/15.2.1/limits:
-
-/usr/include/bits/struct_mutex.h:
-
-/usr/include/c++/15.2.1/bits/istream.tcc:
-
-/usr/include/c++/15.2.1/bits/stl_construct.h:
-
-core/http_tcpServer.cpp:
-
-/usr/include/asm-generic/socket.h:
+/usr/include/bits/endianness.h:
 
 /usr/include/c++/15.2.1/bits/stl_iterator.h:
 
@@ -2377,6 +2390,14 @@ core/http_tcpServer.cpp:
 /usr/include/bits/floatn-common.h:
 
 /usr/include/bits/floatn.h:
+
+/usr/include/c++/15.2.1/bits/algorithmfwd.h:
+
+/usr/include/c++/15.2.1/array:
+
+/usr/include/string.h:
+
+/usr/include/bits/socket_type.h:
 
 /usr/include/c++/15.2.1/bits/stl_pair.h:
 
@@ -2434,10 +2455,6 @@ core/request.hpp:
 
 /usr/include/c++/15.2.1/bits/stl_algobase.h:
 
-/usr/include/nlohmann/detail/input/lexer.hpp:
-
-/usr/include/c++/15.2.1/bits/codecvt.h:
-
 /usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc:
 
 /usr/include/bits/select.h:
@@ -2452,13 +2469,9 @@ core/request.hpp:
 
 /usr/include/bits/setjmp.h:
 
-/usr/include/c++/15.2.1/bits/algorithmfwd.h:
+/usr/include/nlohmann/detail/input/lexer.hpp:
 
-/usr/include/c++/15.2.1/array:
-
-/usr/include/string.h:
-
-/usr/include/bits/socket_type.h:
+/usr/include/c++/15.2.1/bits/codecvt.h:
 
 /usr/include/c++/15.2.1/bits/concept_check.h:
 
@@ -2528,6 +2541,8 @@ main_server_linux.cpp:
 
 /usr/include/c++/15.2.1/bits/indirect_array.h:
 
+CMakeFiles/HTTP.dir/utils/logs.cpp.o:
+
 /usr/include/c++/15.2.1/bits/ios_base.h:
 
 /usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h:
@@ -2572,9 +2587,9 @@ main_server_linux.cpp:
 
 /usr/include/c++/15.2.1/bits/new_allocator.h:
 
-/usr/include/c++/15.2.1/bits/basic_string.tcc:
-
 core/http_tcpServer.hpp:
+
+/usr/include/c++/15.2.1/bits/basic_string.tcc:
 
 /usr/include/c++/15.2.1/bits/node_handle.h:
 
@@ -2686,8 +2701,6 @@ core/request.cpp:
 
 /usr/include/c++/15.2.1/bits/valarray_after.h:
 
-CMakeFiles/HTTP.dir/logs.cpp.o:
-
 /usr/include/c++/15.2.1/bit:
 
 /usr/include/c++/15.2.1/bits/basic_ios.h:
@@ -2761,9 +2774,3 @@ CMakeFiles/HTTP.dir/logs.cpp.o:
 /usr/include/c++/15.2.1/variant:
 
 /usr/include/c++/15.2.1/initializer_list:
-
-/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/15.2.1/iosfwd:

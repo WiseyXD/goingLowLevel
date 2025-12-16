@@ -6,6 +6,7 @@ HTTP: \
   CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o \
   CMakeFiles/HTTP.dir/core/router.cpp.o \
   CMakeFiles/HTTP.dir/core/request.cpp.o \
+  CMakeFiles/HTTP.dir/core/response.cpp.o \
   CMakeFiles/HTTP.dir/utils/logs.cpp.o \
   CMakeFiles/HTTP.dir/utils/utility.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
@@ -49,6 +50,8 @@ CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o:
 CMakeFiles/HTTP.dir/core/router.cpp.o:
 
 CMakeFiles/HTTP.dir/core/request.cpp.o:
+
+CMakeFiles/HTTP.dir/core/response.cpp.o:
 
 CMakeFiles/HTTP.dir/utils/logs.cpp.o:
 

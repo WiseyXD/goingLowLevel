@@ -128,10 +128,24 @@ CMakeFiles/HTTP.dir/core/request.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTTP.dir/core/request.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wiseyxd/Projects/goingLowLevel/http/core/request.cpp -o CMakeFiles/HTTP.dir/core/request.cpp.s
 
+CMakeFiles/HTTP.dir/core/response.cpp.o: CMakeFiles/HTTP.dir/flags.make
+CMakeFiles/HTTP.dir/core/response.cpp.o: core/response.cpp
+CMakeFiles/HTTP.dir/core/response.cpp.o: CMakeFiles/HTTP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HTTP.dir/core/response.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTTP.dir/core/response.cpp.o -MF CMakeFiles/HTTP.dir/core/response.cpp.o.d -o CMakeFiles/HTTP.dir/core/response.cpp.o -c /home/wiseyxd/Projects/goingLowLevel/http/core/response.cpp
+
+CMakeFiles/HTTP.dir/core/response.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTTP.dir/core/response.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wiseyxd/Projects/goingLowLevel/http/core/response.cpp > CMakeFiles/HTTP.dir/core/response.cpp.i
+
+CMakeFiles/HTTP.dir/core/response.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTTP.dir/core/response.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wiseyxd/Projects/goingLowLevel/http/core/response.cpp -o CMakeFiles/HTTP.dir/core/response.cpp.s
+
 CMakeFiles/HTTP.dir/utils/logs.cpp.o: CMakeFiles/HTTP.dir/flags.make
 CMakeFiles/HTTP.dir/utils/logs.cpp.o: utils/logs.cpp
 CMakeFiles/HTTP.dir/utils/logs.cpp.o: CMakeFiles/HTTP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HTTP.dir/utils/logs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HTTP.dir/utils/logs.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTTP.dir/utils/logs.cpp.o -MF CMakeFiles/HTTP.dir/utils/logs.cpp.o.d -o CMakeFiles/HTTP.dir/utils/logs.cpp.o -c /home/wiseyxd/Projects/goingLowLevel/http/utils/logs.cpp
 
 CMakeFiles/HTTP.dir/utils/logs.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/HTTP.dir/utils/logs.cpp.s: cmake_force
 CMakeFiles/HTTP.dir/utils/utility.cpp.o: CMakeFiles/HTTP.dir/flags.make
 CMakeFiles/HTTP.dir/utils/utility.cpp.o: utils/utility.cpp
 CMakeFiles/HTTP.dir/utils/utility.cpp.o: CMakeFiles/HTTP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HTTP.dir/utils/utility.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HTTP.dir/utils/utility.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTTP.dir/utils/utility.cpp.o -MF CMakeFiles/HTTP.dir/utils/utility.cpp.o.d -o CMakeFiles/HTTP.dir/utils/utility.cpp.o -c /home/wiseyxd/Projects/goingLowLevel/http/utils/utility.cpp
 
 CMakeFiles/HTTP.dir/utils/utility.cpp.i: cmake_force
@@ -162,6 +176,7 @@ HTTP_OBJECTS = \
 "CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o" \
 "CMakeFiles/HTTP.dir/core/router.cpp.o" \
 "CMakeFiles/HTTP.dir/core/request.cpp.o" \
+"CMakeFiles/HTTP.dir/core/response.cpp.o" \
 "CMakeFiles/HTTP.dir/utils/logs.cpp.o" \
 "CMakeFiles/HTTP.dir/utils/utility.cpp.o"
 
@@ -172,12 +187,13 @@ HTTP: CMakeFiles/HTTP.dir/main_server_linux.cpp.o
 HTTP: CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o
 HTTP: CMakeFiles/HTTP.dir/core/router.cpp.o
 HTTP: CMakeFiles/HTTP.dir/core/request.cpp.o
+HTTP: CMakeFiles/HTTP.dir/core/response.cpp.o
 HTTP: CMakeFiles/HTTP.dir/utils/logs.cpp.o
 HTTP: CMakeFiles/HTTP.dir/utils/utility.cpp.o
 HTTP: CMakeFiles/HTTP.dir/build.make
 HTTP: CMakeFiles/HTTP.dir/compiler_depend.ts
 HTTP: CMakeFiles/HTTP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable HTTP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable HTTP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HTTP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

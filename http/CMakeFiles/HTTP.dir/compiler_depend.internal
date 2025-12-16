@@ -6,6 +6,7 @@ CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o
  /home/wiseyxd/Projects/goingLowLevel/http/utils/logs.hpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/http_tcpServer.hpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/request.hpp
+ /home/wiseyxd/Projects/goingLowLevel/http/core/response.hpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/router.hpp
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
@@ -1156,6 +1157,7 @@ CMakeFiles/HTTP.dir/main_server_linux.cpp.o
  /home/wiseyxd/Projects/goingLowLevel/http/main_server_linux.cpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/http_tcpServer.hpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/request.hpp
+ /home/wiseyxd/Projects/goingLowLevel/http/core/response.hpp
  /home/wiseyxd/Projects/goingLowLevel/http/core/router.hpp
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
@@ -1920,9 +1922,10 @@ HTTP
  /usr/lib/libc_nonshared.a
  /usr/lib/libm.so.6
  /usr/lib/libmvec.so.1
- /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/http_tcpServer.cpp.o
- /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/logs.cpp.o
+ /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o
+ /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/core/request.cpp.o
+ /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/core/router.cpp.o
  /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/main_server_linux.cpp.o
- /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/router.cpp.o
- /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/utilities.cpp.o
+ /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/utils/logs.cpp.o
+ /home/wiseyxd/Projects/goingLowLevel/http/CMakeFiles/HTTP.dir/utils/utility.cpp.o
 

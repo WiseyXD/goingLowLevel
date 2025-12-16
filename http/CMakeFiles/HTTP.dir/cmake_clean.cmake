@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o.d"
   "CMakeFiles/HTTP.dir/core/request.cpp.o"
   "CMakeFiles/HTTP.dir/core/request.cpp.o.d"
+  "CMakeFiles/HTTP.dir/core/response.cpp.o"
+  "CMakeFiles/HTTP.dir/core/response.cpp.o.d"
   "CMakeFiles/HTTP.dir/core/router.cpp.o"
   "CMakeFiles/HTTP.dir/core/router.cpp.o.d"
   "CMakeFiles/HTTP.dir/main_server_linux.cpp.o"
