@@ -1,37 +1,5 @@
-#include "utilities.hpp"
-
-namespace utils {
-
-std::vector<std::string> split(const std::string &text, char delimiter) {
-  std::vector<std::string> parts;
-  std::string current;
-
-  for (char c : text) {
-    if (c == delimiter) {
-      parts.push_back(current);
-      current.clear();
-    } else {
-      current.push_back(c);
-    }
-  }
-
-  parts.push_back(current);
-  return parts;
-};
-
-std::vector<std::string> split(const std::string &text,
-                               const std::string &delimiter) {
-  std::vector<std::string> parts;
-  size_t start = 0, end;
-
-  while ((end = text.find(delimiter, start)) != std::string::npos) {
-    parts.push_back(text.substr(start, end - start));
-    start = end + delimiter.length();
-  }
-
-  parts.push_back(text.substr(start));
-  return parts;
-};
+#include "request.hpp"
+#include "../utils/utility.hpp"
 
 struct parsedRequest parseRequest(std ::string rawRequest) {
   // -------------------------
@@ -41,21 +9,22 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
   json jsonRequstBody;
   parsedRequest result;
 
-  std::vector<std::string> requestParts = utils::split(rawRequest, "\r\n\r\n");
+  std::vector<std::string> requestParts = split(rawRequest, "\r\n\r\n");
 
-  std::string headerSection = requestParts.size() > 0 ? requestParts[0] : "";
+  const std::string headerSection =
+      requestParts.size() > 0 ? requestParts[0] : "";
   std::string bodySection = requestParts.size() > 1 ? requestParts[1] : "";
 
   // -------------------------
   // 2. Split headerSection by lines
   // -------------------------
-  std::vector<std::string> headerLines = utils::split(headerSection, '\n');
+  std::vector<std::string> headerLines = split(headerSection, "\n");
 
   // -------------------------
   // 3. First line → method, path, version
   // -------------------------
   std::string requestLine = headerLines.size() > 0 ? headerLines[0] : "";
-  std::vector<std::string> reqParts = utils::split(requestLine, ' ');
+  std::vector<std::string> reqParts = split(requestLine, " ");
 
   std::string method = reqParts.size() > 0 ? reqParts[0] : "";
   std::string path = reqParts.size() > 1 ? reqParts[1] : "";
@@ -76,7 +45,7 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
     if (line.empty())
       continue;
 
-    std::vector<std::string> kv = utils::split(line, ": ");
+    std::vector<std::string> kv = split(line, ": ");
     if (kv.size() == 2) {
       std::transform(kv[0].begin(), kv[0].end(), kv[0].begin(), ::tolower);
       headers.push_back({kv[0], kv[1]});
@@ -88,23 +57,23 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
   // -------------------------
   std::string requestBody = bodySection;
 
-  for (auto h : headers) {
-    std::cout << h.first << std::endl;
-    std::cout << h.second << std::endl;
+  // for (auto h : headers) {
+  //   std::cout << h.first << std::endl;
+  //   std::cout << h.second << std::endl;
 
-    if (h.first == "content-type" &&
-        h.second.find("application/json") != std::string::npos) {
-      isJson = true;
-      try {
-        jsonRequstBody = json::parse(requestBody);
-        std::cout << "JSON BODY PARSED: " << jsonRequstBody.dump(2)
-                  << std::endl;
+  //   if (h.first == "content-type" &&
+  //       h.second.find("application/json") != std::string::npos) {
+  //     isJson = true;
+  //     try {
+  //       jsonRequstBody = json::parse(requestBody);
+  //       std::cout << "JSON BODY PARSED: " << jsonRequstBody.dump(2)
+  //                 << std::endl;
 
-      } catch (const std::exception &e) {
-        std::cerr << "JSON parse error: " << e.what() << std::endl;
-      }
-    }
-  }
+  //     } catch (const std::exception &e) {
+  //       std::cerr << "JSON parse error: " << e.what() << std::endl;
+  //     }
+  //   }
+  // }
 
   // Debug print (optional)
   // std::cout << "Method: " << method << std::endl;
@@ -124,5 +93,3 @@ struct parsedRequest parseRequest(std ::string rawRequest) {
 
   return result;
 };
-
-}; // namespace utils

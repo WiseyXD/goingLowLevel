@@ -1,7 +1,7 @@
-CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: \
- /home/wiseyxd/Projects/goingLowLevel/http/http_tcpServer.cpp \
+CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o: \
+ /home/wiseyxd/Projects/goingLowLevel/http/core/http_tcpServer.cpp \
  /usr/include/stdc-predef.h \
- /home/wiseyxd/Projects/goingLowLevel/http/http_tcpServer.hpp \
+ /home/wiseyxd/Projects/goingLowLevel/http/core/http_tcpServer.hpp \
  /usr/include/arpa/inet.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
@@ -119,7 +119,7 @@ CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: \
  /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/wiseyxd/Projects/goingLowLevel/http/logs.hpp \
+ /home/wiseyxd/Projects/goingLowLevel/http/core/../utils/logs.hpp \
  /usr/include/c++/15.2.1/iostream /usr/include/c++/15.2.1/ostream \
  /usr/include/c++/15.2.1/bits/ostream.h /usr/include/c++/15.2.1/ios \
  /usr/include/c++/15.2.1/exception \
@@ -160,7 +160,15 @@ CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: \
  /usr/include/c++/15.2.1/bits/basic_ios.tcc \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
  /usr/include/c++/15.2.1/bits/istream.tcc \
- /home/wiseyxd/Projects/goingLowLevel/http/router.hpp \
+ /home/wiseyxd/Projects/goingLowLevel/http/core/request.hpp \
+ /usr/include/nlohmann/json.hpp /usr/include/c++/15.2.1/algorithm \
+ /usr/include/c++/15.2.1/bits/stl_algo.h \
+ /usr/include/c++/15.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/15.2.1/bits/stl_heap.h \
+ /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/15.2.1/pstl/execution_defs.h \
  /usr/include/c++/15.2.1/functional \
  /usr/include/c++/15.2.1/bits/std_function.h \
  /usr/include/c++/15.2.1/unordered_map \
@@ -175,17 +183,7 @@ CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: \
  /usr/include/c++/15.2.1/bits/stl_vector.h \
  /usr/include/c++/15.2.1/bits/stl_bvector.h \
  /usr/include/c++/15.2.1/bits/vector.tcc /usr/include/c++/15.2.1/array \
- /usr/include/c++/15.2.1/compare \
- /home/wiseyxd/Projects/goingLowLevel/http/utilities.hpp \
- /usr/include/nlohmann/json.hpp /usr/include/c++/15.2.1/algorithm \
- /usr/include/c++/15.2.1/bits/stl_algo.h \
- /usr/include/c++/15.2.1/bits/algorithmfwd.h \
- /usr/include/c++/15.2.1/bits/stl_heap.h \
- /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
- /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
- /usr/include/c++/15.2.1/pstl/execution_defs.h \
- /usr/include/c++/15.2.1/iterator \
+ /usr/include/c++/15.2.1/compare /usr/include/c++/15.2.1/iterator \
  /usr/include/c++/15.2.1/bits/stream_iterator.h \
  /usr/include/c++/15.2.1/memory \
  /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
@@ -307,4 +305,5 @@ CMakeFiles/HTTP.dir/http_tcpServer.cpp.o: \
  /usr/include/nlohmann/ordered_map.hpp /usr/include/c++/15.2.1/any \
  /usr/include/nlohmann/detail/macro_unscope.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /usr/include/c++/15.2.1/variant /usr/include/c++/15.2.1/bits/monostate.h
+ /usr/include/c++/15.2.1/variant /usr/include/c++/15.2.1/bits/monostate.h \
+ /home/wiseyxd/Projects/goingLowLevel/http/core/router.hpp

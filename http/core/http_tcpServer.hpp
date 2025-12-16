@@ -3,9 +3,9 @@
 #include <arpa/inet.h>  // inet_pton, htons, etc.
 #include <netinet/in.h> // defines sockaddr_in and in_addr
 #include <string>
-#include <sys/socket.h>
-#include <sys/types.h>
 #include <unistd.h>
+
+class Router;
 
 namespace http {
 
@@ -26,7 +26,7 @@ struct requestBody {
 
 class TcpServer {
 public:
-  TcpServer(std::string ip_address, int port);
+  TcpServer(std::string ip_address, int port, Router &router);
   ~TcpServer();
   void closeServer();
   int startServer();
@@ -47,5 +47,6 @@ private:
   ssize_t bytesRead;
   struct sockaddr_in m_clientAddress;
   socklen_t m_clientAddress_len;
+  Router &m_router;
 };
 }; // namespace http

@@ -1,17 +1,20 @@
 #include "http_tcpServer.hpp"
-#include "logs.cpp"
-#include "utilities.cpp"
+#include "../utils/logs.hpp"
+#include "request.hpp"
+#include "router.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <sys/socket.h>
+#include <sys/types.h>
 #include <vector>
-
 namespace http {
 
-TcpServer::TcpServer(std::string ip_address, int port)
+TcpServer::TcpServer(std::string ip_address, int port, Router &router)
     : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
       m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)),
-      m_clientAddress(), m_clientAddress_len(sizeof(m_clientAddress)) {
+      m_clientAddress(), m_clientAddress_len(sizeof(m_clientAddress)),
+      m_router(router), m_serverMessage() {
   m_socketAddress.sin_port = htons(port);
   m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
   m_socketAddress.sin_family = AF_INET;
@@ -81,13 +84,15 @@ void TcpServer::readingRequest() {
   }
 
   std::string rawRequest(buffer);
-  std::cout << rawRequest << std::endl;
-  parsedRequest parsedRequest = utils::parseRequest(rawRequest);
-  std::cout << parsedRequest.path << std::endl;
+  // std::cout << rawRequest << std::endl;
+  parsedRequest parsedRequest = parseRequest(rawRequest);
+  // std::cout << parsedRequest.path << std::endl;
+  m_serverMessage = m_router.handle(parsedRequest);
 }
 
 void TcpServer::sendingResponse() {
   long bytesSent;
+  std::cout << m_serverMessage.c_str() << std::endl;
   bytesSent =
       write(m_new_socket, m_serverMessage.c_str(), m_serverMessage.size());
   if (bytesSent == m_serverMessage.size()) {

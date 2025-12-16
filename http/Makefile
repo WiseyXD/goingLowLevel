@@ -129,29 +129,77 @@ HTTP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/build
 .PHONY : HTTP/fast
 
-http_tcpServer.o: http_tcpServer.cpp.o
-.PHONY : http_tcpServer.o
+core/http_tcpServer.o: core/http_tcpServer.cpp.o
+.PHONY : core/http_tcpServer.o
 
 # target to build an object file
-http_tcpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/http_tcpServer.cpp.o
-.PHONY : http_tcpServer.cpp.o
+core/http_tcpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.o
+.PHONY : core/http_tcpServer.cpp.o
 
-http_tcpServer.i: http_tcpServer.cpp.i
-.PHONY : http_tcpServer.i
+core/http_tcpServer.i: core/http_tcpServer.cpp.i
+.PHONY : core/http_tcpServer.i
 
 # target to preprocess a source file
-http_tcpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/http_tcpServer.cpp.i
-.PHONY : http_tcpServer.cpp.i
+core/http_tcpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.i
+.PHONY : core/http_tcpServer.cpp.i
 
-http_tcpServer.s: http_tcpServer.cpp.s
-.PHONY : http_tcpServer.s
+core/http_tcpServer.s: core/http_tcpServer.cpp.s
+.PHONY : core/http_tcpServer.s
 
 # target to generate assembly for a file
-http_tcpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/http_tcpServer.cpp.s
-.PHONY : http_tcpServer.cpp.s
+core/http_tcpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/http_tcpServer.cpp.s
+.PHONY : core/http_tcpServer.cpp.s
+
+core/request.o: core/request.cpp.o
+.PHONY : core/request.o
+
+# target to build an object file
+core/request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/request.cpp.o
+.PHONY : core/request.cpp.o
+
+core/request.i: core/request.cpp.i
+.PHONY : core/request.i
+
+# target to preprocess a source file
+core/request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/request.cpp.i
+.PHONY : core/request.cpp.i
+
+core/request.s: core/request.cpp.s
+.PHONY : core/request.s
+
+# target to generate assembly for a file
+core/request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/request.cpp.s
+.PHONY : core/request.cpp.s
+
+core/router.o: core/router.cpp.o
+.PHONY : core/router.o
+
+# target to build an object file
+core/router.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/router.cpp.o
+.PHONY : core/router.cpp.o
+
+core/router.i: core/router.cpp.i
+.PHONY : core/router.i
+
+# target to preprocess a source file
+core/router.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/router.cpp.i
+.PHONY : core/router.cpp.i
+
+core/router.s: core/router.cpp.s
+.PHONY : core/router.s
+
+# target to generate assembly for a file
+core/router.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/core/router.cpp.s
+.PHONY : core/router.cpp.s
 
 main_server_linux.o: main_server_linux.cpp.o
 .PHONY : main_server_linux.o
@@ -177,6 +225,54 @@ main_server_linux.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/main_server_linux.cpp.s
 .PHONY : main_server_linux.cpp.s
 
+utils/logs.o: utils/logs.cpp.o
+.PHONY : utils/logs.o
+
+# target to build an object file
+utils/logs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/logs.cpp.o
+.PHONY : utils/logs.cpp.o
+
+utils/logs.i: utils/logs.cpp.i
+.PHONY : utils/logs.i
+
+# target to preprocess a source file
+utils/logs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/logs.cpp.i
+.PHONY : utils/logs.cpp.i
+
+utils/logs.s: utils/logs.cpp.s
+.PHONY : utils/logs.s
+
+# target to generate assembly for a file
+utils/logs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/logs.cpp.s
+.PHONY : utils/logs.cpp.s
+
+utils/utility.o: utils/utility.cpp.o
+.PHONY : utils/utility.o
+
+# target to build an object file
+utils/utility.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/utility.cpp.o
+.PHONY : utils/utility.cpp.o
+
+utils/utility.i: utils/utility.cpp.i
+.PHONY : utils/utility.i
+
+# target to preprocess a source file
+utils/utility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/utility.cpp.i
+.PHONY : utils/utility.cpp.i
+
+utils/utility.s: utils/utility.cpp.s
+.PHONY : utils/utility.s
+
+# target to generate assembly for a file
+utils/utility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTP.dir/build.make CMakeFiles/HTTP.dir/utils/utility.cpp.s
+.PHONY : utils/utility.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +282,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... HTTP"
-	@echo "... http_tcpServer.o"
-	@echo "... http_tcpServer.i"
-	@echo "... http_tcpServer.s"
+	@echo "... core/http_tcpServer.o"
+	@echo "... core/http_tcpServer.i"
+	@echo "... core/http_tcpServer.s"
+	@echo "... core/request.o"
+	@echo "... core/request.i"
+	@echo "... core/request.s"
+	@echo "... core/router.o"
+	@echo "... core/router.i"
+	@echo "... core/router.s"
 	@echo "... main_server_linux.o"
 	@echo "... main_server_linux.i"
 	@echo "... main_server_linux.s"
+	@echo "... utils/logs.o"
+	@echo "... utils/logs.i"
+	@echo "... utils/logs.s"
+	@echo "... utils/utility.o"
+	@echo "... utils/utility.i"
+	@echo "... utils/utility.s"
 .PHONY : help
 
 
